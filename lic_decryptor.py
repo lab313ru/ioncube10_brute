@@ -164,7 +164,7 @@ def main(path):
     x = open(sys.argv[2], 'rb')
     lines = x.read().splitlines()
     print('total lines: %d' % len(lines))
-    results = pool.starmap_async(check_key, [(item, ctr, data) for item in lines])
+    results = pool.starmap(check_key, [(item, ctr, data) for item in lines])
     x.close()
 
 
